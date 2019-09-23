@@ -1,0 +1,40 @@
+using System;
+
+class MainClass {
+  public static void Main (string[] args) 
+  {
+    Random rand = new Random();
+    int[] a = new int[10000];
+    int i, N, m;
+    Console.Write("Введите число N: ");
+    N = int.Parse(Console.ReadLine());
+    for(i=1; i<=N; i++)
+    {
+      Console.Write("a[");
+      Console.Write(i);
+      Console.Write("] = ");
+      a[i]=int.Parse(Console.ReadLine());
+    }
+    Console.WriteLine();
+    Console.WriteLine();
+    for(i=1; i<=N-1; i++)
+    {
+      if(a[i]>a[i+1])
+      {
+        m = a[i];
+        a[i] = a[i+1];
+        a[i+1] = m;
+      }
+    }
+    Console.WriteLine("Конечный массив, в котором все элементы упорядочены по возрастанию: ");
+    for(i=1; i<=N; i++)
+    {
+      Console.Write("a[");
+      Console.Write(i);
+      Console.Write("] = ");
+      Console.Write(a[i]);
+      Console.Write(", ");
+    }
+    Console.ReadKey();
+  }
+}
